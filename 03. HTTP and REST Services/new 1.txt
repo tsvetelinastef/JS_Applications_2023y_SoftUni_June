@@ -5,4 +5,6 @@ how to create request?
 and in Postman I go to the plus
 and next to the "GET" I type:  "swapi.dev"  and we press the button next to it called "Send"
 than down I see the response from the server ->  Unde button "Body" and "Header" 
- 
+
+  - also you don't need registation to use it
+  - better to use it on the app, not online in the browser 
