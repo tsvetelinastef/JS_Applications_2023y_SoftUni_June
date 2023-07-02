@@ -2,6 +2,7 @@ async function getInfo() {
   const stopId = document.getElementById('stopId').value;
   const busList = document.getElementById('buses');
 
+
   busList.textContent = '';
   try {
     const response = await fetch(
@@ -19,6 +20,7 @@ async function getInfo() {
     const data = await response.json();
 
     document.getElementById('stopName').textContent = data.name;
+    
     Object.entries(data.buses).forEach(([busId, time]) => {
       const li = document.createElement('li');
       li.textContent = `Bus ${busId} arrives in ${time} minutes`;
