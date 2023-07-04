@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".git"
+		},
+		{
+			"path": "Exercise_Asynchronous"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Exercise_Asynchronous"
+	}
+}
