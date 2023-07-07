@@ -1,57 +1,106 @@
-import {showDetails} from './details.js'
+// showHome => home elements shown
+// load posts
+// create post function => post functionality
+// cancel functionality
 
-const section = document.getElementById("homeView");
-const main = document.getElementsByTagName("main")[0];
-const form = document.querySelector("#homeView form");
-//console.log("beforeRendering");
-form.addEventListener("submit", onSubmit);
-const url = "http://localhost:3030/jsonstore/collections/myboard/posts";
+import { createElements } from "./untils.js";
 
-section.remove();
-
-export async function showHome(){
-   const topiContainer = section.querySelector(".topic-title");
-
-   const posts = await loadPost();
-   const content = Object.values(posts).map(x=> topicTemplate(x));
-   topiContainer.replaceChildren(...content);
-   main.replaceChildren(section);
+export async function showHome(e) {
+    e.preventDefault();
+    localStorage.clear()
+    window.location = './index.html'
 }
 
-function topicTemplate(data) {
-   // debugger
-   const container = document.createElement("div");
-   container.classList.add("topic-container");
-   container.innerHTML = `
-   
-   `
+loadPosts();
+function showComments(e) {
+    let postId;
+    if (e.target.tagName === 'a') {
+        postId = e.target.dataset.id
+    } else {
+        postId = e.target.parentElement.getAttribute('dataset.id');
+    }
+    localStorage.setItem('postId', postId);
+    window.location = './theme-content.html'  
 }
 
-function onSubmit(e){
-   console.log("submit")
+async function loadPosts() {    // to load the data...
+    let topicDivElement = document.querySelector(".topic-title");
+    topicDivElement.replaceChildren();
+
+    try {
+        let response = await fetch(
+            "http://localhost:3030/jsonstore/collections/myboard/posts");
+
+        if (!response.ok) {
+            let error = await response.json();
+            throw new Error(error.message);
+        }
+
+        let posts = await response.json();
+        for (const [postId, post] of Object.entries(posts)) {
+            console.log(postId, post);
+            let topicContainerDivElement = createElements("div", "", topicDivElement, { 'class': "topic-container" });
+            let topicNameWrapperDivElement = createElements("div", "", topicContainerDivElement, { 'class': "topic-name-wrapper" });
+            let topicNameDivElement = createElements('div', '', topicNameWrapperDivElement, { 'class': "topic-name" });
+            let anchorElement = createElements('a', '', topicNameDivElement, { 'href': '#', 'database.id': postId, 'class': 'normal' });
+            anchorElement.addEventListener('click', showComments);
+            createElements('h2', post.title, anchorElement, {});
+            let columnsDivElement = createElements('div', '', topicNameDivElement, { 'class': 'columns' });
+            let divElement = createElements('div', '', columnsDivElement, {});
+            let dateParagraphElement = createElements('p', 'Date:', divElement, {});
+            createElements('time', post.createDate, dateParagraphElement, {});
+            let nickNameDivElement = createElements('div', '', divElement, { 'class': 'nick-name' });
+            let userNameParagraphElement = createElements('p', 'Username:', nickNameDivElement, {});
+            createElements('span', post.username, userNameParagraphElement, {});
+        }
+    } catch (error) {
+        alert(error.message);
+    }
 }
 
-function topicTemplate(data){
-   debugger
-   const container = document.createElement("div");
-   container.classList.add("topic-container");
-   container.innerHTML = `
-   <div clas="topic-name-wrapper" id="${data._id}">
-       <div class="topic-name">
-       <a href="#" class="normal">
-            <h2>${data.topicName}</h2>
-      </a>
-      <div class="columns">
-         <div>
-            <p>Date: <time>${data.date}</time></p>
-            <div class="nick-name">
-               <p>Username: <span>${data.username}</span></p>
-            </div>
-         </div>
-         </div>
-      </div>`;
+export async function createPost(e) {
+    e.preventDefault();
 
+    const formElement = document.querySelector('form');
 
+    let formData = new FormData(formElement);
+
+    const title = formData.get('topicName').trim();
+    const username = formData.get('username').trim();
+    const content = formData.get('postText').trim();
+    const createDate = new Date();
+
+    try {
+        if (!title) {
+            throw new Error('Title is required!');
+        } else if (!username) {
+            throw new Error('Username is required!');
+        } else if (!content) {
+            throw new Error('Post content is required!');
+        }
+
+        const res = await fetch('http://localhost:3030/jsonstore/collections/myboard/posts', {
+            method: "POST", // or PUT
+            headers: { "Content-Type": 'application/json' },
+            body: JSON.stringify({ title, username, content, createDate })
+        })
+
+        if (!res.ok) {
+            const err = await res.json();
+            throw new Error(error.message)
+        }
+
+        formElement.reset();
+        await loadPosts();
+
+    } catch (error) {
+        alert(error.message);
+    }
 }
 
-showDetails()
+export function onClose(e) {
+    e.preventDefault();
+
+    const formElement = document.querySelector('form');
+    formElement.reset();
+}
