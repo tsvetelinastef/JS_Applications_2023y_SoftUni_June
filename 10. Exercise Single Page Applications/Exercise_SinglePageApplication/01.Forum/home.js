@@ -1,16 +1,30 @@
 import {showDetails} from './details.js'
 
 const section = document.getElementById("homeView");
-// section.remove();
 const main = document.getElementsByTagName("main")[0];
 const form = document.querySelector("#homeView form");
-console.log("beforeRendering");
- // form.addEventListener("submit", onSubmit);
+//console.log("beforeRendering");
+form.addEventListener("submit", onSubmit);
+const url = "http://localhost:3030/jsonstore/collections/myboard/posts";
 
-export function showHome(){
-   console.log("showHome")
-   main.replaceChild(section);
+section.remove();
+
+export async function showHome(){
+   const topiContainer = section.querySelector(".topic-title");
+
+   const posts = await loadPost();
+   const content = Object.values(posts).map(x=> topicTemplate(x));
+   topiContainer.replaceChildren(...content);
+   main.replaceChildren(section);
+}
+
+function topicTemplate(data) {
    // debugger
+   const container = document.createElement("div");
+   container.classList.add("topic-container");
+   container.innerHTML = `
+   
+   `
 }
 
 function onSubmit(e){
