@@ -8,19 +8,21 @@ import { createElements } from "./untils.js";
 export async function showHome(e) {
     e.preventDefault();
     localStorage.clear()
-    window.location = './index.html'
+    window.location = "./index.html"
+}
+if (!window.location.href.includes("theme-content.html")){
+    loadPosts();
 }
 
-loadPosts();
 function showComments(e) {
     let postId;
-    if (e.target.tagName === 'a') {
+    if (e.target.tagName === "a") {
         postId = e.target.dataset.id
     } else {
-        postId = e.target.parentElement.getAttribute('dataset.id');
+        postId = e.target.parentElement.getAttribute("dataset.id");
     }
-    localStorage.setItem('postId', postId);
-    window.location = './theme-content.html'  
+    localStorage.setItem("postId", postId);
+    window.location = "./theme-content.html"  
 }
 
 async function loadPosts() {    // to load the data...
