@@ -1,0 +1,23 @@
+{
+  "name": "js_applications_2023y_softuni_june",
+  "version": "1.0.0",
+  "description": "SoftUni course part of JavaScript Advanced pt.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsvetelinastef/JS_Applications_2023y_SoftUni_June.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsvetelinastef/JS_Applications_2023y_SoftUni_June/issues"
+  },
+  "homepage": "https://github.com/tsvetelinastef/JS_Applications_2023y_SoftUni_June#readme",
+  "dependencies": {
+    "page": "^1.11.6"
+  }
+}
