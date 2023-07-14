@@ -1,4 +1,6 @@
-import { ideaById, deleteById, createIdea } from '../src/api/data.js';
+/** @format  */
+
+import { ideaById, deleteById } from '../api/data.js';
 const section = document.getElementById("detailsView");
 
 
