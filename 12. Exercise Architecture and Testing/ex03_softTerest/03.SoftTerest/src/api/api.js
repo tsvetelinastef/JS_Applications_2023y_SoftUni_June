@@ -3,7 +3,7 @@ const host = "http://localhost:3030/";
 async function requester(method, url, data) {
     const user = JSON.parse(sessionStorage.getItem("user"));
     const options = {
-        method: method,
+        method,  //  method: method,
         headers: {},
     };
     if (data) {
@@ -19,8 +19,8 @@ async function requester(method, url, data) {
         const res = await fetch(`${host}${url}`, options);
         if (!res.ok) {
             if (res.status === 403) {
-                sessionStorage.removeItem("user");
-                throw new Error("Access denied");
+               sessionStorage.removeItem("user");
+               // throw new Error("Access denied");
             }
             const err = await res.json();
             throw new Error(err.message);

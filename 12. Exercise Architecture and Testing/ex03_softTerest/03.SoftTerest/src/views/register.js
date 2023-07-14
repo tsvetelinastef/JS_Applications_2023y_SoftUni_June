@@ -1,4 +1,4 @@
-import { register } from "../api/user.js";
+import { register } from "../src/api/user.js";
 
 const section = document.getElementById("registerView");
 const form = document.querySelector('form');

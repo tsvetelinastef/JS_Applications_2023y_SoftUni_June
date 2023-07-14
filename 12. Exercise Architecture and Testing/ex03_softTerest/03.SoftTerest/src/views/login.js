@@ -1,4 +1,4 @@
-import { login } from "../api/user.js";
+import { login } from "../src/api/user.js";
 
 const section = document.getElementById("loginView");
 const form = section.querySelector("form");

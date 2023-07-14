@@ -15,7 +15,7 @@ async function onSubmit(e) {
     e.preventDefault();
     const formData = new FormData(form);
     const { tile, description, imageURL } = Object.fromEntries(formData);
-    await createIdea({tile, description, img: imageURL});
+    await createIdea({ tile, description, img: imageURL});
     form.reset();
     ctx.goTo('/catalog')
 }

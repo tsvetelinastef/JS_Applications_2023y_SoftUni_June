@@ -1,13 +1,13 @@
 // console.log('hello world);
 
-import { initializer } from "./router.js";
-import { showHomeView } from "./views/home.js";
-import { showCatalog } from "./views/catalog.js";
-import { showLogin } from "./views/login.js";
-import { showRegister } from "./views/register.js";
-import { showCreate } from "./views/create.js";
-import { showDetails } from "./views/details.js";
-import { logout } from "./api/user.js";
+import { showHomeView } from "./src/views/home.js";
+import { showCatalog } from "./src/views/catalog.js";
+import { showLogin } from "./src/views/login.js";
+import { showRegister } from "./src/views/register.js";
+import { showCreate } from "./src/views/create.js";
+import { showDetails } from "./src/views/details.js";
+import { initializer } from "./src/router.js";
+import { logout } from "./src/api/user.js";
 
 // MVC Model
 // app.js => controller
@@ -24,12 +24,12 @@ async function logoutFunctionality() {
 
 const links = {
     "/": showHomeView,
-    "/catalog": showCatalog,
-    "/login": showLogin,
-    "/register": showRegister,
-    "/create": showCreate,
-    "/details": showDetails,
-    "/logout": logoutFunctionality
+    '/catalog': showCatalog,
+    '/login': showLogin,
+    '/register': showRegister,
+    '/create': showCreate,
+    '/details': showDetails,
+    '/logout': logoutFunctionality
 }
 
 
