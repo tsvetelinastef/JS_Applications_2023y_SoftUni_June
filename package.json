@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tsvetelinastef/JS_Applications_2023y_SoftUni_June#readme",
   "dependencies": {
+    "lit-html": "^2.7.5",
     "page": "^1.11.6"
   }
 }
