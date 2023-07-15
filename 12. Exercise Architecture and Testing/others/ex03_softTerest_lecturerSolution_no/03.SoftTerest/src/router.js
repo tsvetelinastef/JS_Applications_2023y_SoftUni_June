@@ -18,14 +18,14 @@ export function initializer(links) {
 
     function goTo(name, ...params) {  // it takes url ... or can take name, params for additional things for logout 
         const handler = links[name];
-        if (typeof (handler) === 'function') {
+        if (typeof(handler) === 'function') {
             handler(context, ...params);
         }
     }
 
     function onNavigateClick(event) {
         event.preventDefult();
-        const target = event.target;
+        let target = event.target;
         if (target.tagName === 'IMG') {
             target = target.parentElement;
         }

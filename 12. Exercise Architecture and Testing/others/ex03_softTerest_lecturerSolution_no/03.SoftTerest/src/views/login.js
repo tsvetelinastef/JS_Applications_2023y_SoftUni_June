@@ -1,4 +1,4 @@
-import { login } from "../src/api/user.js";
+import { login } from "../api/user.js";
 
 const section = document.getElementById("loginView");
 const form = section.querySelector("form");
@@ -18,7 +18,7 @@ async function onSubmit(e) {
     const password = formData.get("password");
 
     await login(email, password);
-    form.reset();
+    //form.reset();
     ctx.updateNav();
     ctx.goTo('/catalog');
 

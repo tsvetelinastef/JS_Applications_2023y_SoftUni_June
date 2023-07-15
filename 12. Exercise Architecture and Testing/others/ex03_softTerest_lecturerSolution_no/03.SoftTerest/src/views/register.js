@@ -1,4 +1,4 @@
-import { register } from "../src/api/user.js";
+import { register } from "../api/user.js";
 
 const section = document.getElementById("registerView");
 const form = document.querySelector('form');
@@ -31,12 +31,12 @@ async function onSubmit(event) {
    //  }
    
      if (password !== repeatPassword) {
-         alert('Passwords do not match'); 
+         alert("Passwords do not match"); 
     } else  {
         await register(email, password);
-        alert("Registration successful");
-        form.reset();
+       // alert("Registration successful");
+        // form.reset();
         ctx.updateNav();
-        ctx.goTo('/catalog');
+        ctx.goTo("/catalog");
     }
 }
