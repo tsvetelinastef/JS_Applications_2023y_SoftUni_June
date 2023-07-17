@@ -31,14 +31,15 @@ update();
 function update() {
     const result = cardTemplate(cats);
     render(result, allCats); // we send result to continer allcats
-
 }
+
 
 function toggle(event) {
     const elementId = event.target.parentNode.querySelector('.status').id;
     const cat = cats.find(c => c.id == elementId);
     
     cat.info = !cat.info;
+    console.log(cat);
     update();
-
 }
+
