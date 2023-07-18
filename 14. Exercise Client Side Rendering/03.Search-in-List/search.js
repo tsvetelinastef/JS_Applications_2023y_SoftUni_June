@@ -34,8 +34,14 @@ function search() {
 }
 
 function countMatches(towns, match) {
-   const matches = towns.filter(t => match && t.toLowerCase().includes(match.toLowerCase())).length;
+   const matches = towns.filter(t => match && t.toLowerCase().includes(match.toLowerCase())).length; 
+  // console.log(matches); // returns the array, so that's why on the previous line we need .length , because we want the number of it, not the names of the towns
    return `${matches} matches found`;  //  return matches ? `${matches} matches found` : '';
+
+//    or it can allso be written like:
+//    const matches = towns.filter(t => match && t.toLowerCase().includes(match.toLowerCase())); 
+//    return `${matches.length} matches found`; 
+
 }
 
 
