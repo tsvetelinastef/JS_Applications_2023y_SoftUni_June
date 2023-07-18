@@ -23,7 +23,7 @@ function getTowns(event) {
         // li.textContent = el;
         // ul.appendChild(li);
         ul.innerHTML += li;
-    });
+    })
     root.appendChild(ul);
 
     // const result = listTemplate(towns);
