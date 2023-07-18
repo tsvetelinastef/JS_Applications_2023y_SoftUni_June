@@ -35,8 +35,7 @@ function search() {
 
 function countMatches(towns, match) {
    const matches = towns.filter(t => match && t.toLowerCase().includes(match.toLowerCase())).length;
-   return matches ? `${matches} matches found` : '';
-   
+   return `${matches} matches found`;  //  return matches ? `${matches} matches found` : '';
 }
 
 
