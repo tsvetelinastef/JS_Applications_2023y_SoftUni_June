@@ -43,11 +43,14 @@ export class AuthService extends BaseApiService {
             headers: {
                 'X-Authorization': this.sessionService.getAccessToken() 
             }
-
         }
         let result = await this._internalFetchJson(url, options);
         this.sessionService.removeAccessToken();
         return result;
     }
 
+    isUserLoggedIn() {
+        this.sessionService.getAccessToken() != undefined;
+        
+    }
 }
