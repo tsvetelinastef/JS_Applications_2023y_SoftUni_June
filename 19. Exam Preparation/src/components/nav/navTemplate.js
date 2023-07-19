@@ -23,3 +23,4 @@ export const navTemplate = (isUserLoggedIn, logoutHandler) => html`
           </div>`
         }
     </nav>`;
+    

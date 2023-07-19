@@ -1,21 +1,22 @@
-export class NavComponent {
+export class LoginComponent {
     constructor(authSerice, renderHandler, templateFunction, router) {
         this.authSerice = authSerice;
         this.renderHandler = renderHandler;
         this.templateFunction = templateFunction;
         this.router = router;
-        this.logoutHandler = this._logoutHandler.bind(this);
+        this.loginHandler = this._loginHandler.bind(this);
         this.showView = this._showView.bind(this);
     }
 
     async _showView() {
-        let isUserLoggedIn = this.authSerice.isUserLoggedIn();
-        let template = this.templateFunction(isUserLoggedIn, this.logoutHandler);
+       // let isUserLoggedIn = this.authSerice.isUserLoggedIn();
+        let template = this.templateFunction(this.loginHandler);
         this.renderHandler(template);
     }
 
-    async _logoutHandler() {
+    async _loginHandler(e) {
        await this.authSerice.logout();
        this.router.navigate('/');
     }
+
 }
