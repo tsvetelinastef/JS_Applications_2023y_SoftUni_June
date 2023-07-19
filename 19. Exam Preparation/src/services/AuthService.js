@@ -41,7 +41,7 @@ export class AuthService extends BaseApiService {
         let options = {
             method: 'Get',
             headers: {
-                'X-Authorization': this.sessionService.getAccessToken()
+                'X-Authorization': this.sessionService.getAccessToken() 
             }
 
         }
