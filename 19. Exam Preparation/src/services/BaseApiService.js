@@ -1,9 +1,12 @@
+import { UserReadableError } from "../errors/UserReadableError.js";
+
 export class BaseApiService {
     constructor(baseUrl) {
         this.baseUrl = baseUrl;
     }
+
     async _internalFetchJson(url, options) {
-        try{
+        try {
             let response = await fetch(url, options);
             if(response.status === 200) {
                 return await response.json();

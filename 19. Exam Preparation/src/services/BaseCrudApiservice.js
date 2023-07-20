@@ -9,16 +9,16 @@ export class BaseCrudApiServce extends BaseApiService {
 
     async getAll() { 
         let options = {
-            method: 'Get',
+            method: 'Get'
         };
         let url = `${this.resourceUrl}?sortBy=_createdOn%20desc`;
-        let result = await this._internalFetchJson(this.resourceUrl, options )
+        let result = await this._internalFetchJson(url, options);
         return result;
     }
 
     async getById(id) { 
         let options = {
-            method: 'Get',
+            method: 'Get'
         };
         let url = `${this.resourceUrl}/${id}`;
         let result = await this._internalFetchJson(url, options);
