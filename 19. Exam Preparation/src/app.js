@@ -5,12 +5,17 @@ import { BaseCrudApiService } from "./services/BaseCrudApiService.js";
 import { SessionService } from "./services/SessionService.js";
 import { NavComponent } from "./components/nav/nav.js";
 import { navTemplate } from "./components/nav/navTemplate.js";
+import
+import
 
 const main = document.querySelector('#wrapper main');
 const nav = dcument.querySelector('#wrapper header');
 
 // Router
-let router = 
+let router = {
+    navigate: page.show,
+    redirect: page.redirect
+}
 
 // Base Url
 const baseUrl = 'http://localhost:3030';
@@ -25,9 +30,9 @@ let authService = new AuthService(baseUrl, sessionService);
 let shoeService = new BaseCrudApiService(baseUrl, '/data/shoes', sessionStorage);
 
 // Components
-let navComponent = new NavComponent(authService, renderNav, navTemplate);
+let navComponent = new NavComponent(authService, renderNav, navTemplate, router);
 let homeComponent = new HomeComponent(renderBoby, homeTemplate);
-let loginComponent = new LoginComponent(authService, renderBody, loginTemplate);
+let loginComponent = new LoginComponent(authService, renderBody, loginTemplate, router);
 let dashboardComponent = new DashboardComponent(shoeService, renderBody, dashboardTemplate);
 
 // Router

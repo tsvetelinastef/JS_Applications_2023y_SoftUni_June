@@ -1,3 +1,5 @@
+import { UserReadableError } from "../../errors/UserReadableError.js";
+
 export class LoginComponent {
     constructor(authSerice, renderHandler, templateFunction, router) {
         this.authSerice = authSerice;
@@ -9,14 +11,11 @@ export class LoginComponent {
     }
 
     async _showView() {
-       // let isUserLoggedIn = this.authSerice.isUserLoggedIn();
         let template = this.templateFunction(this.loginHandler);
         this.renderHandler(template);
     }
 
     async _loginHandler(e) {
-        // await this.authSerice.logout();
-        // this.router.navigate('/');
         e.preventDefault();
         let form = e.target;
         let formData = new FormData(form);
@@ -31,12 +30,11 @@ export class LoginComponent {
 
         let user = { email, password};
         try {
-            let result = this.authSerice.login(user);
+            let result = await this.authSerice.login(user);
             this.router.navigate('/dashboard');
         } catch (e) {
             if(e instanceof UserReadableError) {
-                alert(e.message);
-                
+                alert(e.message);   
             }
         }
     }
