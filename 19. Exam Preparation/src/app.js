@@ -5,8 +5,15 @@ import { BaseCrudApiService } from "./services/BaseCrudApiService.js";
 import { SessionService } from "./services/SessionService.js";
 import { NavComponent } from "./components/nav/nav.js";
 import { navTemplate } from "./components/nav/navTemplate.js";
-import
-import
+
+
+
+import { HomeComponent } from "./components/home/home.js";
+import { LoginComponent } from "./components/login/login.js";
+import { DashboardComponent } from "./components/dashboard/dashboard.js";
+import { homeTemplate } from "./components/home/homeTemplate.js";
+import { loginTemplate } from "./components/login/loginTemplate.js";
+import { dashboardTemplate } from "./components/dashboard/dashboardTemplate.js";
 
 const main = document.querySelector('#wrapper main');
 const nav = dcument.querySelector('#wrapper header');

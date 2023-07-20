@@ -133,7 +133,7 @@ describe("E2E tests", function () {
       expect(postData.password).to.equal(data.password);
     });
 
-    it.only("Logout makes correct API call [ 2.5 Points ]", async () => {
+    it("Logout makes correct API call [ 2.5 Points ]", async () => {
       const data = mockData.users[0];
       const { post } = await handle(endpoints.login);
       const { get } = await handle(endpoints.logout);
