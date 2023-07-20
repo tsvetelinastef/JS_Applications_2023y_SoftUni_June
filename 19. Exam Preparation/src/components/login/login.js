@@ -15,8 +15,29 @@ export class LoginComponent {
     }
 
     async _loginHandler(e) {
-       await this.authSerice.logout();
-       this.router.navigate('/');
-    }
+        // await this.authSerice.logout();
+        // this.router.navigate('/');
+        e.preventDefault();
+        let form = e.target;
+        let formData = new FormData(form);
 
+        let email = formData.get('email');
+        let password = formData.get('password');
+        
+        if(email == '' || password == '' ) {
+            alert('Email and Password must not be empty');
+            return;
+        }
+
+        let user = { email, password};
+        try {
+            let result = this.authSerice.login(user);
+            this.router.navigate('/dashboard');
+        } catch (e) {
+            if(e instanceof UserReadableError) {
+                alert(e.message);
+                
+            }
+        }
+    }
 }

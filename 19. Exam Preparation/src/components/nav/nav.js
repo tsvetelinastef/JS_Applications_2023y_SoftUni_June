@@ -16,6 +16,6 @@ export class NavComponent {
 
     async _logoutHandler() {
        await this.authSerice.logout();
-       this.router.navigate('/');
+       this.router.navigate('/dashboard');
     }
 }

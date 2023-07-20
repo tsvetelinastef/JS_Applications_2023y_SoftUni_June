@@ -11,6 +11,7 @@ export class BaseCrudApiServce extends BaseApiService {
         let options = {
             method: 'Get',
         };
+        let url = `${this.resourceUrl}?sortBy=_createdOn%20desc`;
         let result = await this._internalFetchJson(this.resourceUrl, options )
         return result;
     }
