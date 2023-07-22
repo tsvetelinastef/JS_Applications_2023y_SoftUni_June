@@ -5,15 +5,15 @@ import { BaseCrudApiService } from "./services/BaseCrudApiService.js";
 import { SessionService } from "./services/SessionService.js";
 import { NavComponent } from "./components/nav/nav.js";
 import { navTemplate } from "./components/nav/navTemplate.js";
-
-
-
 import { HomeComponent } from "./components/home/home.js";
-import { LoginComponent } from "./components/login/login.js";
-import { DashboardComponent } from "./components/dashboard/dashboard.js";
 import { homeTemplate } from "./components/home/homeTemplate.js";
+import { LoginComponent } from "./components/login/login.js";
 import { loginTemplate } from "./components/login/loginTemplate.js";
+import { DashboardComponent } from "./components/dashboard/dashboard.js";
 import { dashboardTemplate } from "./components/dashboard/dashboardTemplate.js";
+import { RegisterComponent } from "./components/register/register.js";
+import { registerTemplate } from "./components/register/registerTemplate.js";
+
 
 const main = document.querySelector('#wrapper main');
 const nav = dcument.querySelector('#wrapper header');
@@ -41,6 +41,8 @@ let navComponent = new NavComponent(authService, renderNav, navTemplate, router)
 let homeComponent = new HomeComponent(renderBoby, homeTemplate);
 let loginComponent = new LoginComponent(authService, renderBody, loginTemplate, router);
 let dashboardComponent = new DashboardComponent(shoeService, renderBody, dashboardTemplate);
+let registerComponent = new RegisterComponent(authService, renderBody, registerTemplate);
+
 
 // Router
 page('/index.html', '/');
