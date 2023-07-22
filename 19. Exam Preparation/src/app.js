@@ -29,27 +29,27 @@ const baseUrl = 'http://localhost:3030';
 
 //Render handlers
 let renderBody = (template) => render(template, main);
-let rendeNav = (template) => render(template, nav);
+let renderNav = (template) => render(template, nav);
 
 // Service
 let sessionService = new SessionService();
 let authService = new AuthService(baseUrl, sessionService);
-let shoeService = new BaseCrudApiService(baseUrl, '/data/shoes', sessionStorage);
+let shoeService = new BaseCrudApiService(baseUrl, '/data/shoes', sessionService);
 
 // Components
 let navComponent = new NavComponent(authService, renderNav, navTemplate, router);
 let homeComponent = new HomeComponent(renderBoby, homeTemplate);
 let loginComponent = new LoginComponent(authService, renderBody, loginTemplate, router);
+let registerComponent = new RegisterComponent(authService, renderBody, registerTemplate, router);
 let dashboardComponent = new DashboardComponent(shoeService, renderBody, dashboardTemplate);
-let registerComponent = new RegisterComponent(authService, renderBody, registerTemplate);
 
 
-// Router
+// Routing
 page('/index.html', '/');
 page(navComponent.showView);
 
 page('/', homeComponent.showView);
 page('/login', loginComponent.showView);
-page('/register', registerComponent.showView); 
+page('/register', registerComponent.showView);
 page('/dashboard', dashboardComponent.showView);
 page.start();
