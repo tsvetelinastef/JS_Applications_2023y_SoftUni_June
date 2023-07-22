@@ -1,6 +1,5 @@
 import { html } from "../../../node_modules/lit-html/lit-html.js";
 
-
 export const loginTemplate = (submitHandler) => html`
 <section id="login">
     <div class="form">
@@ -15,5 +14,3 @@ export const loginTemplate = (submitHandler) => html`
     </form>
     </div>
 </section>`;
-
-
