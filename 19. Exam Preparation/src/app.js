@@ -50,5 +50,6 @@ page(navComponent.showView);
 
 page('/', homeComponent.showView);
 page('/login', loginComponent.showView);
+page('/register', registerComponent.showView); 
 page('/dashboard', dashboardComponent.showView);
 page.start();
