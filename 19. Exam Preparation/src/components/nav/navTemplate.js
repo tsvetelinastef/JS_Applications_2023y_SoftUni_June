@@ -4,7 +4,6 @@ export const navTemplate = (isUserLoggedIn, logoutHandler) => html`
         <a id="logo" href="/">
             <img id="logo-img" src="/images/logo.png" alt=""/>
         </a>
-
         <nav>
           <div>
             <a href="/dashboard">Dashboard</a>

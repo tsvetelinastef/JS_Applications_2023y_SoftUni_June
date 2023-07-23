@@ -19,22 +19,21 @@ export class CreateComponent {
         let formData = new FormData(form);
 
       let shoe =  {
-            brand: formData.get,
-            model,
-            imageUrl,
-            release,
-            designer,
-            value
-        }
-
-
-        let email = formData.get('email');
-        let password = formData.get('password');
-        
-        if(email == '' || password == '' ) {
-            alert('Email and Password must not be empty');
+            brand: formData.get('brand'),
+            model: formData.get('model'),
+            imageUrl: formData.get('imageUrl'),
+            release: formData.get('release'),
+            designer: formData.get('designer'),
+            value: formData.get('value')
+        };
+        if(shoe.brand == '' || shoe.model == '' ||  shoe.imageUrl == '' || 
+        shoe.release == '' || shoe.designer == '' || shoe.value == '' ) {
+            alert('All fields are required');
             return;
         }
+
+        let result = await this.shoeService.create(shoe);
+        this.router.navigate('/dashboard');
     }
 }
 

@@ -13,6 +13,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.js";
 import { dashboardTemplate } from "./components/dashboard/dashboardTemplate.js";
 import { RegisterComponent } from "./components/register/register.js";
 import { registerTemplate } from "./components/register/registerTemplate.js";
+import { CreateComponent } from "./components/create/create.js";
 
 
 const main = document.querySelector('#wrapper main');
@@ -34,15 +35,15 @@ let renderNav = (template) => render(template, nav);
 // Service
 let sessionService = new SessionService();
 let authService = new AuthService(baseUrl, sessionService);
-let shoeService = new BaseCrudApiService(baseUrl, '/data/shoes', sessionService);
+let shoesService = new BaseCrudApiService(baseUrl, '/data/shoes', sessionService);
 
 // Components
 let navComponent = new NavComponent(authService, renderNav, navTemplate, router);
 let homeComponent = new HomeComponent(renderBoby, homeTemplate);
 let loginComponent = new LoginComponent(authService, renderBody, loginTemplate, router);
 let registerComponent = new RegisterComponent(authService, renderBody, registerTemplate, router);
-let dashboardComponent = new DashboardComponent(shoeService, renderBody, dashboardTemplate);
-
+let dashboardComponent = new DashboardComponent(shoesService, renderBody, dashboardTemplate);
+let createComponent = new CreateComponent(shoesService, renderBody, createTemplate, router);
 
 // Routing
 page('/index.html', '/');
@@ -52,4 +53,5 @@ page('/', homeComponent.showView);
 page('/login', loginComponent.showView);
 page('/register', registerComponent.showView);
 page('/dashboard', dashboardComponent.showView);
+page('/create', createComponent.showView);
 page.start();
