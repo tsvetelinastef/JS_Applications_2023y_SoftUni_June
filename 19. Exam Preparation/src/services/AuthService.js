@@ -55,5 +55,9 @@ export class AuthService extends BaseApiService {
        return this.sessionService.getAccessToken() != undefined;
     }
 
+    getUserId() {
+        return this.sessionService.getCurrentUserId();
+    }
 
+    
 }

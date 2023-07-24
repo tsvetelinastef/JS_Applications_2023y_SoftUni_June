@@ -66,5 +66,4 @@ export class BaseCrudApiServce extends BaseApiService {
         let result = await this._internalFetchJson(url, options);
         return result;
     }
-
 }     

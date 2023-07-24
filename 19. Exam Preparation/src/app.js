@@ -2,6 +2,7 @@ import page from "../node_modules/page/page.mjs";
 import { render } from "../node_modules/lit-html/lit-html.js";
 import { AuthService } from "./services/AuthService.js";
 import { BaseCrudApiService } from "./services/BaseCrudApiService.js";
+
 import { SessionService } from "./services/SessionService.js";
 import { NavComponent } from "./components/nav/nav.js";
 import { navTemplate } from "./components/nav/navTemplate.js";
@@ -14,6 +15,7 @@ import { dashboardTemplate } from "./components/dashboard/dashboardTemplate.js";
 import { RegisterComponent } from "./components/register/register.js";
 import { registerTemplate } from "./components/register/registerTemplate.js";
 import { CreateComponent } from "./components/create/create.js";
+import { DetailsComponent } from "./components/details/details.js";
 
 
 const main = document.querySelector('#wrapper main');
@@ -44,6 +46,7 @@ let loginComponent = new LoginComponent(authService, renderBody, loginTemplate, 
 let registerComponent = new RegisterComponent(authService, renderBody, registerTemplate, router);
 let dashboardComponent = new DashboardComponent(shoesService, renderBody, dashboardTemplate);
 let createComponent = new CreateComponent(shoesService, renderBody, createTemplate, router);
+let detailsComponent = new DetailsComponent(authService, shoesService, renderBody, detailsTemplate, router);
 
 // Routing
 page('/index.html', '/');
@@ -54,5 +57,5 @@ page('/login', loginComponent.showView);
 page('/register', registerComponent.showView);
 page('/dashboard', dashboardComponent.showView);
 page('/create', createComponent.showView);
-page('/details/:id');
+page('/details/:id', detailsComponent.showView);
 page.start();
