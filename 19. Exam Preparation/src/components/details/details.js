@@ -9,8 +9,9 @@ export class DetailsComponent {
 
     async _showView(ctx) {
         let id = ctx.params.id;
-        let shoes = await this.shoeService.getById(id);
-        let template = this.templateFunction(shoes);
+        let shoe = await this.shoeService.getById(id);
+        
+        let template = this.templateFunction(shoe, isOwner, this.deleteHandler);
         this.renderHandler(template);
     }
 

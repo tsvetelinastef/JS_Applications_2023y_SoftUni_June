@@ -1,4 +1,5 @@
 const key = 'accessToken';
+const userKey = 'userId';
 
 export class SessionService {
     getAccessToken() {
@@ -6,10 +7,24 @@ export class SessionService {
     }
 
     setAcessToken(accessToken) {
-        return sessionStorage.setItem(key, accessToken);
+        sessionStorage.setItem(key, accessToken);
     }
 
     removeAccessToken() {
-        return sessionStorage.removeItem(key);
+        sessionStorage.removeItem(key);
     }
+
+    setCurrentUserId(userId) {
+        sessionStorage.setItem(userKey, userId);
+    }
+
+    getCurrentUserId() {
+        return sessionStorage.getItem(userKey);
+    }
+
+    removeCurrentUserId() {
+        sessionStorage.removeItem(userKey);
+    }
+
+
 }
