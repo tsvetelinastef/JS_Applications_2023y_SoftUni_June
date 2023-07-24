@@ -23,10 +23,8 @@ export const detailsTemplate = (shoe, isOwner, deleteHandler) => html`
             ? html`
             <div id="action-buttons">
                 <a href=${`/edit/${shoe._id}`} id="edit-btn">Edit</a>
-                <a href="javascript:void(0)" id="delete-btn" @click=${(e) => deleteHandler}>Delete</a>
+                <a href="javascript:void(0)" id="delete-btn" @click=${(e) => deleteHandler(shoe._id)}>Delete</a>
             </div>`
             : ''}
-    <!--Edit and Delete are only for creator-->
-        
     </div>
 </section>`;

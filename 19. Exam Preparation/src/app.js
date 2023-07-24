@@ -54,4 +54,5 @@ page('/login', loginComponent.showView);
 page('/register', registerComponent.showView);
 page('/dashboard', dashboardComponent.showView);
 page('/create', createComponent.showView);
+page('/details/:id');
 page.start();
