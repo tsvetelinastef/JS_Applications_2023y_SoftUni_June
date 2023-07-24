@@ -2,7 +2,6 @@ import page from "../node_modules/page/page.mjs";
 import { render } from "../node_modules/lit-html/lit-html.js";
 import { AuthService } from "./services/AuthService.js";
 import { BaseCrudApiService } from "./services/BaseCrudApiService.js";
-
 import { SessionService } from "./services/SessionService.js";
 import { NavComponent } from "./components/nav/nav.js";
 import { navTemplate } from "./components/nav/navTemplate.js";
