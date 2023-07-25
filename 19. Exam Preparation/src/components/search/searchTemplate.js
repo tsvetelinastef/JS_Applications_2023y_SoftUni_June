@@ -1,4 +1,7 @@
-export const searchTemplate = () => html`
+import { html } from "lit-html";
+import { shoeTemplate } from "../shared/shoeTemplate.js";
+
+export const searchTemplate = (shoes, submitHandler) => html`
 <section id="search">
     <h2>Search by Brand</h2>
     <form class="search-wrapper cf" @submit=${submitHandler}>
@@ -14,22 +17,18 @@ export const searchTemplate = () => html`
 
     <h3>Results:</h3>
     <div id="search-container">
+    ${shoes.length > 0
+        ? html`
+        <ul class="card-wrapper">
+            ${shoes.map(s => shoeTemplate(s))}
+        </ul>`
+        : html`<h2>There are no items added yet.</h2>`}
         <ul class="card-wrapper">
        
+
         </ul>
+
+        <!-- Display an h2 if there are no posts -->
+        <!-- <h2>There are no results found.</h2>-->
     </div>
 </section>`;
-
-const shoeTemplate = () => html`
-<li class="card">
-    <img src="./images/travis.jpg" alt="travis" />
-    <p>
-    <strong>Brand: </strong><span class="brand">Air Jordan</span>
-    </p>
-    <p>
-    <strong>Model: </strong>
-    <span class="model">1 Retro High TRAVIS SCOTT</span>
-    </p>
-    <p><strong>Value:</strong><span class="value">2000</span>$</p>
-    <a class="details-btn" href="">Details</a>
-</li>`;
