@@ -22,13 +22,7 @@ export const searchTemplate = (shoes, submitHandler) => html`
         <ul class="card-wrapper">
             ${shoes.map(s => shoeTemplate(s))}
         </ul>`
-        : html`<h2>There are no items added yet.</h2>`}
-        <ul class="card-wrapper">
-       
-
-        </ul>
-
-        <!-- Display an h2 if there are no posts -->
-        <!-- <h2>There are no results found.</h2>-->
+        : html`<h2>There are no results found.</h2>`
+        }
     </div>
 </section>`;
