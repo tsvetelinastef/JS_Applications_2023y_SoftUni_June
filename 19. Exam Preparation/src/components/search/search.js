@@ -10,8 +10,13 @@ export class SearchComponent {
     async _showView(ctx) {
         // let shoes = await this.shoeService.getAll();
         let queryString = ctx.querystring;
-        let queryArr = queryString.split('='); 
-        let value = queryArr[1];
+        let shoes = [];
+        if(queryString != '') {
+            let queryArr = queryString.split('='); 
+            let value = queryArr[1];
+            shoes = await this.shoeService.search(value);
+        }
+
         let template = this.templateFunction(shoes);
         this.renderHandler(template);
     }

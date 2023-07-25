@@ -25,6 +25,15 @@ export class BaseCrudApiServce extends BaseApiService {
         return result;
     }
 
+    async getByBrand(brand) { 
+        let options = {
+            method: 'Get'
+        };
+        let url = `${this.resourceUrl}?where=brand%20LIKE%20%22${brand}%22`;
+        let result = await this._internalFetchJson(url, options);
+        return result;
+    }
+
     async create(item) { 
         let options = {
             method: 'Post',
