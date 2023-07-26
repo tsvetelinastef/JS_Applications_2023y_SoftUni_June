@@ -17,7 +17,7 @@ import { CreateComponent } from "./components/create/create.js";
 import { DetailsComponent } from "./components/details/details.js";
 import { EditComponent } from "./components/edit/edit.js";
 import { editTemplate } from "./components/edit/editTemplate.js";
-
+import { SearchComponent } from "./components/search/search.js";
 
 const main = document.querySelector('#wrapper main');
 const nav = dcument.querySelector('#wrapper header');
@@ -49,7 +49,7 @@ let dashboardComponent = new DashboardComponent(shoesService, renderBody, dashbo
 let createComponent = new CreateComponent(shoesService, renderBody, createTemplate, router);
 let detailsComponent = new DetailsComponent(authService, shoesService, renderBody, detailsTemplate, router);
 let editComponent = new EditComponent(shoesService, renderBody, editTemplate, router);
-
+let searchComponent = new SearchComponent(shoesService, renderBody, searchTemplate, );
 
 // Routing
 page('/index.html', '/');
