@@ -42,7 +42,7 @@ let shoesService = new BaseCrudApiService(baseUrl, '/data/shoes', sessionService
 
 // Components
 let navComponent = new NavComponent(authService, renderNav, navTemplate, router);
-let homeComponent = new HomeComponent(renderBoby, homeTemplate);
+let homeComponent = new HomeComponent(renderBody, homeTemplate, navComponent);
 let loginComponent = new LoginComponent(authService, renderBody, loginTemplate, router);
 let registerComponent = new RegisterComponent(authService, renderBody, registerTemplate, router);
 let dashboardComponent = new DashboardComponent(shoesService, renderBody, dashboardTemplate);

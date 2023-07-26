@@ -1,0 +1,4 @@
+In Judje we commit files:
+- test.js can be deleted,
+- everything without "node_modules" folder in 
+compressed folder 
