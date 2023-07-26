@@ -1,7 +1,7 @@
-import { html } from "lit-html";
+import { html } from "../../../node_modules/lit-html/lit-html.js"; 
 import { shoeTemplate } from "../shared/shoeTemplate.js";
 
-export const searchTemplate = (shoes, submitHandler) => html`
+export const searchTemplate = (shoes, submitHandler, isUserLoggedIn) => html`
 <section id="search">
     <h2>Search by Brand</h2>
     <form class="search-wrapper cf" @submit=${submitHandler}>
@@ -20,7 +20,7 @@ export const searchTemplate = (shoes, submitHandler) => html`
     ${shoes.length > 0
         ? html`
         <ul class="card-wrapper">
-            ${shoes.map(s => shoeTemplate(s))}
+            ${shoes.map(s => shoeTemplate(s, isUserLoggedIn))}
         </ul>`
         : html`<h2>There are no results found.</h2>`
         }

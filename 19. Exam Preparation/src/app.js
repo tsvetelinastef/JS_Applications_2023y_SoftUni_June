@@ -49,7 +49,7 @@ let dashboardComponent = new DashboardComponent(shoesService, renderBody, dashbo
 let createComponent = new CreateComponent(shoesService, renderBody, createTemplate, router);
 let detailsComponent = new DetailsComponent(authService, shoesService, renderBody, detailsTemplate, router);
 let editComponent = new EditComponent(shoesService, renderBody, editTemplate, router);
-let searchComponent = new SearchComponent(shoesService, renderBody, searchTemplate, );
+let searchComponent = new SearchComponent(authService, shoesService, renderBody, searchTemplate, router);
 
 // Routing
 page('/index.html', '/');
@@ -62,4 +62,5 @@ page('/dashboard', dashboardComponent.showView);
 page('/create', createComponent.showView);
 page('/details/:id', detailsComponent.showView);
 page('/edit/:id', editComponent.showView);
-page.start();
+page('/search', searchComponent.showView);
+page.start(); 

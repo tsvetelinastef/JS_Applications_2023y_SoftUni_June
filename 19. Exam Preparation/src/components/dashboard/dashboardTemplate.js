@@ -9,7 +9,7 @@ export const dashboardTemplate = (shoes) => html`
     ${shoes.length > 0
         ? html`
         <ul class="card-wrapper">
-            ${shoes.map(s => shoeTemplate(s))}
+            ${shoes.map(s => shoeTemplate(s, true))}
         </ul>`
         : html`<h2>There are no items added yet.</h2>`
     } 

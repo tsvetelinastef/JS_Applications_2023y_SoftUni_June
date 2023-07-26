@@ -1,5 +1,6 @@
 export class SearchComponent {
-    constructor(shoeService, renderHandler, templateFunction, router) {
+    constructor(authService , shoeService, renderHandler, templateFunction, router) {
+        this.authService = authService;
         this.shoeService = shoeService;
         this.renderHandler = renderHandler;
         this.templateFunction = templateFunction;
@@ -12,13 +13,14 @@ export class SearchComponent {
         // let shoes = await this.shoeService.getAll();
         let queryString = ctx.querystring;
         let shoes = [];
+        let isUserLoggedIn = this.authService.isUserLoggedIn();
         if(queryString != '') {
             let queryArr = queryString.split('='); 
             let value = queryArr[1];
             shoes = await this.shoeService.getByBrand(value);
         }
 
-        let template = this.templateFunction(shoes, this.searchHandler);
+        let template = this.templateFunction(shoes, this.searchHandler, isUserLoggedIn);
         this.renderHandler(template);
     }
 
@@ -26,8 +28,13 @@ export class SearchComponent {
         e.preventDefault();
         let form = e.target;
         let formData = new FormData(form);
-
         let searchValue = formData.get('search');
+
+        if(searchValue == '') {
+            alert('Brand cannot be empty');
+            return;
+        }
+
         this.router.navigate(`/search?brand=${searchValue}`);
     }
 }
