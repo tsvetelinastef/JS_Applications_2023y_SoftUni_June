@@ -1,4 +1,23 @@
-In Judje we commit files:
-- test.js can be deleted,
+!!! for the server !!!:
+- we look in "package.json" what type of server we 
+have if it's 3030 or 3000, etc.
+- in "index.html", we can edit/remove the point in 
+line 42/ <!-- Home page --> and should be like: 
+<img src="/images/home.jpg" alt="home"/> 
+
+-> new Terminal
+-> npm install
+
+
+!!! how to make test !!!:
+-> we click on: +
+-> npm test
+
+!!! if it's start to write somewhere random on the terminal than: 
+-> npm cls
+
+
+!!! In Judje we commit files !!!:
+- "test.js" can be deleted,
 - everything without "node_modules" folder in 
 compressed folder 
