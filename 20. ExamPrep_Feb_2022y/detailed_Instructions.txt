@@ -2,7 +2,7 @@ steps for solving this task:
 
 1. in Terminal we write:
 -> npm i
--> server
+-> cd server (cd ..ser+Enter)
 -> node server.js
 
 we press the "+" on left we open new terminal:
@@ -14,4 +14,54 @@ we press the "+" on left we open new terminal:
 and after running theese we saw the browser that is opening our app (we see the app in the browser)
 In case we don't see it we type in the browser: localhost 3000 and press Enter
 
+--------------------------------------------------------------------------------
+ 
+ files "api.js" and "util.js" are copied files from the previous exercise/project from the lecturer  
+ in "api.js" we have one function with three parameters-takes( method, url, data) that assembles query that 
+ send and automatically processes the response, if there is errors - reacts and we see it on the screen and returns result,
+ creates options in the beggining, check if the current user is logged, if it's logged must have access token in the Local Storage
+ the function getAccessToken - will return the token, if it don't have token - will return null, if it have token - in options before 
+ it in the property "headers"- we put 'X-Authorization' and hook up the token that we read...  
+ 
+ 1. we copy and paste code from "index.html" in new file: "example.js" 
+ 2. and we first modify(add new line and remove all div) the index.html to look like:
+		<!DOCTYPE html>
+		<html lang="en">
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<link rel="stylesheet" href="/styles/style.css">
+				<title>GamesPlay</title>
+	
+<!--  new line here: -->
+<script src="/src/app.js" type="module"></script>
+   
+			</head>
+			<body>
+				<div id="box">
+					<header>
+						<!-- Navigation -->
+						<h1><a class="home" href="/">GamesPlay</a></h1>
+						<nav>
+							<a href="/catalog">All games</a>
+							<!-- Logged-in users -->
+							<div id="user">
+								<a href="#">Create Game</a>
+								<a href="#">Logout</a>
+							</div>
+							<!-- Guest users -->
+							<div id="guest">
+								<a href="#">Login</a>
+								<a href="#">Register</a>
+							</div>
+						</nav>
+					</header>
+					<!-- Main Content -->
+					<main id="main-content">
+					</main>
+				</div>
+			</body>
+			</html>
+
+3. we create folder: "src" and "app.js", "util.js" and folder: "api"
  
