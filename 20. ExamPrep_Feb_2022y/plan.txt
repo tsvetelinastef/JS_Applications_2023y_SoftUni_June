@@ -7,48 +7,48 @@ update folder 20. ExamPrep_Feb_2022
 
 
 ------------------------------------------------------------------------------
-we start first with: 
-esaiest things - reading the views
+ we start first with: 
+ esaiest things - reading the views
 
-[X] Unpack project and install dependencies
-[ ] Create app entry point with placeholder handlers
-[ ] Implement rendering dependency injection and create placeholder views
+ [X] Unpack project and install dependencies
+ [X] Create app entry point with placeholder handlers
+ [ ] Implement rendering dependency injection and create placeholder views
 
-Implement views
-- Home
-[ ] Reading functionality in Data service
-[ ]	Template and view control
+ Implement views
+ - Home
+ [ ] Reading functionality in Data service
+ [ ]	Template and view control
 
-- Catalog
-[ ] Extend reading functionality in Data service
-[ ] Template and view control
+ - Catalog
+ [ ] Extend reading functionality in Data service
+ [ ] Template and view control
 
-- Login and Register
-[ ] Create User service
-[ ] Template and view control 
-[ ] Submitting form and error handling
+ - Login and Register
+ [ ] Create User service
+ [ ] Template and view control 
+ [ ] Submitting form and error handling
 
-- Navigation handler 
-[ ] Session middleware
-[ ] Extend rendering middleware to include navbar
-[ ] Template and view control
+ - Navigation handler 
+ [ ] Session middleware
+ [ ] Extend rendering middleware to include navbar
+ [ ] Template and view control
 
-- Create
-[ ] Writing functionality in Data service
-[ ] Template and view control 
-[ ] Submitting form and error handling 
+ - Create
+ [ ] Writing functionality in Data service
+ [ ] Template and view control 
+ [ ] Submitting form and error handling 
 
-- Details 
-[ ] Extend reading functionality in Data service
-[ ] Template and view control
+ - Details 
+ [ ] Extend reading functionality in Data service
+ [ ] Template and view control
 
-- Edit and Delete
-[ ] Extend writing functionality in Data service
-[ ] Template and view control
-[ ] Submitting form and error handling
+ - Edit and Delete
+ [ ] Extend writing functionality in Data service
+ [ ] Template and view control
+ [ ] Submitting form and error handling
 
-- BONUS: Comments
-[ ] Create Comments service
-[ ] Template and view control 
-[ ] Submitting form and error handling
+ - BONUS: Comments
+ [ ] Create Comments service
+ [ ] Template and view control 
+ [ ] Submitting form and error handling
 

@@ -16,7 +16,7 @@
 
 --------------------------------------------------------------------------------
  
- files "api.js" and "util.js" are copied files from the previous exercise/project from the lecturer  
+ files "api.js" and "util.js" are copied ready files from the previous exercise/project 
  in "api.js" we have one function with three parameters-takes( method, url, data) that assembles query that 
  send and automatically processes the response, if there is errors - reacts and we see it on the screen and returns result,
  creates options in the beggining, check if the current user is logged, if it's logged must have access token in the Local Storage
@@ -27,6 +27,8 @@
  the function request do all of the queries ....
  
  file "util.js -> cares about the user's session - 4 functions
+ we create file "api.js" and we load it in "index.html" -> we just add in "<head>" tags this: <script src="/src/app.js" type="module"></script>
+ in file app.js we write this: alert('it works'); - after that open the browser and press the button F5, because it can't do it automatically 
  
  
  
@@ -70,5 +72,5 @@
 			</body>
 			</html>
 
-3. we create folder: "src" and "app.js", "util.js" and folder: "api"
+ 3. we create folder: "src" and "app.js", "util.js" and folder: "api"
  

@@ -1,3 +1,4 @@
+// we create file "api.js" and we load it in "index.html" and after this  we add this: 
 // alert('it works'); - after that open the browser and press the button F5, because it can't do it automatically 
 
 import page from '../node_modules/page/page.mjs';
