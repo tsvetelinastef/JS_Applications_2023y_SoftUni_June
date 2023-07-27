@@ -3,9 +3,15 @@
 
 import page from '../node_modules/page/page.mjs'; // 1st thing we need is page module, because it navigates and ties up our entire application, writes functions our dependency injections  
 
+import { addRender } from './middlewares/render.js';
+import { homePge } from './views/home.js';
+
+page(addRender);
+
+
+page('/', homePge);
 page('/', () => console.log('home page')); // for the staring view - console.log
 // in the Inspector and in the browser ->  we see: "home page" 
-
 page('/catalog', () => console.log('catalog page'));
 page('/login', () => console.log('login page'));
 page('/register', () => console.log('register page'));
