@@ -22,6 +22,9 @@ In case we don't see it we type in the browser: localhost 3000 and press Enter
  creates options in the beggining, check if the current user is logged, if it's logged must have access token in the Local Storage
  the function getAccessToken - will return the token, if it don't have token - will return null, if it have token - in options before 
  it in the property "headers"- we put 'X-Authorization' and hook up the token that we read...  
+ "delete" queries don't have any data
+ "put" queries have data
+ 
  
  1. we copy and paste code from "index.html" in new file: "example.js" 
  2. and we first modify(add new line and remove all div) the index.html to look like:
