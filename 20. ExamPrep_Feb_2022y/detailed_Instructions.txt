@@ -1,0 +1,17 @@
+steps for solving this task:
+
+1. in Terminal we write:
+-> npm i
+-> server
+-> node server.js
+
+we press the "+" on left we open new terminal:
+-> npm start
+
+we press the "+" on left we open new terminal:
+-> npm test   ... (Ctrl + C) -> to stop tests, because I run them for first time annd they will be throwing some errors
+
+and after running theese we saw the browser that is opening our app (we see the app in the browser)
+In case we don't see it we type in the browser: localhost 3000 and press Enter
+
+ 
