@@ -1,18 +1,18 @@
-steps for solving this task:
+ steps for solving this task:
 
-1. in Terminal we write:
--> npm i
--> cd server (cd ..ser+Enter)
--> node server.js
+ 1. in Terminal we write:
+ -> npm i
+ -> cd server (cd ..ser+Enter)
+ -> node server.js
 
-we press the "+" on left we open new terminal:
--> npm start
+ we press the "+" on left we open new terminal:
+ -> npm start
 
-we press the "+" on left we open new terminal:
--> npm test   ... (Ctrl + C) -> to stop tests, because I run them for first time annd they will be throwing some errors
+ we press the "+" on left we open new terminal:
+ -> npm test   ... (Ctrl + C) -> to stop tests, because I run them for first time annd they will be throwing some errors
 
-and after running theese we saw the browser that is opening our app (we see the app in the browser)
-In case we don't see it we type in the browser: localhost 3000 and press Enter
+ and after running theese we saw the browser that is opening our app (we see the app in the browser)
+ In case we don't see it we type in the browser: localhost 3000 and press Enter
 
 --------------------------------------------------------------------------------
  
@@ -22,8 +22,12 @@ In case we don't see it we type in the browser: localhost 3000 and press Enter
  creates options in the beggining, check if the current user is logged, if it's logged must have access token in the Local Storage
  the function getAccessToken - will return the token, if it don't have token - will return null, if it have token - in options before 
  it in the property "headers"- we put 'X-Authorization' and hook up the token that we read...  
- "delete" queries don't have any data
- "put" queries have data
+ "delete" queries don't have any data...
+ "put" queries have data....
+ the function request do all of the queries ....
+ 
+ file "util.js -> cares about the user's session - 4 functions
+ 
  
  
  1. we copy and paste code from "index.html" in new file: "example.js" 
