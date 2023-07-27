@@ -14,7 +14,7 @@
  and after running theese we saw the browser that is opening our app (we see the app in the browser)
  In case we don't see it we type in the browser: localhost 3000 and press Enter
 
---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
  
  files "api.js" and "util.js" are copied ready files from the previous exercise/project 
  in "api.js" we have one function with three parameters-takes( method, url, data) that assembles query that 
