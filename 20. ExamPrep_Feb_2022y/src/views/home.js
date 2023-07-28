@@ -15,6 +15,8 @@ const homeTemplate = (games) => html`
     <div id="home-page">
         <h1>Latest Games</h1>
 
+        ${games.map(previewTemplate)}
+
         <!-- Display paragraph: If there is no games  -->
         <p class="no-articles">No games yet</p>
     </div>
