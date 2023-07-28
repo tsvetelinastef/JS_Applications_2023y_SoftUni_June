@@ -6,7 +6,7 @@ function ctxRender(content) {
     render(content, root);
 }
 
-function addRender(ctx, next) {
+export function addRender(ctx, next) {
     ctx.render = ctxRender;
     next();
 }
