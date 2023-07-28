@@ -1,6 +1,8 @@
 import { html } from '../../node_modules/lit-html/lit-html.js';
 
-const homeTemplate = () => html`
+import * as gamesService from '../api/games.js';
+
+const homeTemplate = (games) => html`
 <section id="welcome-world">
 
 <div class="welcome-message">
@@ -55,6 +57,23 @@ const homeTemplate = () => html`
 </div>
 </section>`;
 
-export function homePge(ctx) {
-    ctx.render(homeTemplate());
+const previewTemplate = (game) => html`  
+<div class="game">
+        <div class="image-wrap">
+            <img src="./images/CoverFire.png">
+        </div>
+        <h3>Cover Fire</h3>
+        <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+        </div>
+        <div class="data-buttons">
+            <a href="#" class="btn details-btn">Details</a>
+        </div>
+</div>`;
+
+
+export async function homePge(ctx) {
+    const games = await gamesService.getRecent();
+
+    ctx.render(homeTemplate(games));
 }

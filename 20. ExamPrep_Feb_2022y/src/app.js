@@ -12,8 +12,12 @@ import { homePge } from './views/home.js';
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
 
-page(addRender);
+// TODO: Remove after completion
+// import * as api from './api/games.js';
+// window.api = api;
 
+
+page(addRender);
 
 page('/', homePge);
 //page('/', () => console.log('home page')); // for the staring view - console.log
@@ -27,3 +31,4 @@ page('/details/:id', detailsPage);
 page('/edit/:id', editPage);
 
 page.start();
+
