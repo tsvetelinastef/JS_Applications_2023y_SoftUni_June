@@ -14,6 +14,12 @@ const catalogTemplate = (games) => html`
  
 </section> `;
 
+const gamesList = (games) => {
+    if (games.length == 0) {
+        return 
+    }
+};
+
 const cardTemplate = (game) => html`
 <div class="allGames">
     <div class="allGames-info">
