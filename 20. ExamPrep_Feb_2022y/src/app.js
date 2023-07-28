@@ -5,12 +5,12 @@ import page from '../node_modules/page/page.mjs'; // 1st thing we need is page m
 
 import { addRender } from './middlewares/render.js';
 import { catalogPage } from './views/catalog.js';
-import { homePge } from './views/home.js';
-import { loginPage } from './views/login.js';
-import { registerPage } from './views/register.js';
 import { createPage } from './views/create.js';
 import { detailsPage } from './views/details.js';
 import { editPage } from './views/edit.js';
+import { homePge } from './views/home.js';
+import { loginPage } from './views/login.js';
+import { registerPage } from './views/register.js';
 
 page(addRender);
 
