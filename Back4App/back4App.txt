@@ -1,0 +1,12 @@
+back4App
+
+we login and we choose Back end as a service (BaaS)
+we wait a bit... andwe choose "Create a class"
+and we type "Movies" for example as it should be pascal case 
+just with capital letter...
+
+if we want to edit something, we have to delete the entire column and new
+
+
+"Add row" -> and we go to type "Avatar: The Way Of The Water" under "Title" column
+"Genre" column -> "Sci-Fi, Romance, Adventure" , type and the year: "2022" and click on "Add"
